@@ -1,4 +1,16 @@
-# How to build Torch7 with CUDA10
+# Install Torch7 with CUDA10
+
+## Install newest CMake
+1. Clone CMake source and build from source
+````
+$git clone https://github.com/Kitware/CMake.git
+$cd CMake/
+$./bootstrap; make; sudo make install
+````
+2. If have issue with OpenSSL, do bellow steps:
+    - Install it using `$sudo apt-get install libssl-dev` 
+    - Run command `$./bootstrap; make; sudo make install` again
+## Install Torch7 
 1. Install the latest CMake from github repo (the latest FindCUDA.cmake will be installed)
 
 ````
@@ -15,10 +27,10 @@ $ cd ~/torch
 $ rm -fr cmake/3.6/Modules/FindCUDA*
 ````
 
-3. Apply the following patch to cutorch
+- Apply the following patch to cutorch
 
 ````nano ~/Desktop/atomic.patch````
-- Copy bellow content to the file
+3. Copy bellow contents to the file
 
 ````
 diff --git a/lib/THC/THCAtomics.cuh b/lib/THC/THCAtomics.cuh
@@ -52,4 +64,4 @@ $ ./install.sh
 
 5. Test
 
-Type command `$th`
+    Type command `$th`
