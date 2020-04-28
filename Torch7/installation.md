@@ -49,3 +49,7 @@ $ ./clean.sh
 $ export TORCH_NVCC_FLAGS="-D__CUDA_NO_HALF_OPERATORS__"
 $ ./install.sh
 ````
+
+5. Test
+
+Type command `$th`
