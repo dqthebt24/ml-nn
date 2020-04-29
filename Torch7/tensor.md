@@ -6,12 +6,12 @@
     ````
     t = torch.Tensor(2,3,4)
     r = torch.DoubleTensor(t):resize(3,8)
-    #r -- View size of r --
-    #t -- View size of t --
+    #r -- View size of r
+    #t -- View size of t
     r:zero()
     r
     t
-    s = t -- Assignment --
+    s = t -- Assignment
     #s
     #t
     s.resize(4,6)
