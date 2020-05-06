@@ -7,6 +7,9 @@ $git clone https://github.com/Kitware/CMake.git
 $cd CMake/
 $./bootstrap; make; sudo make install
 ````
+- Note: If have error `E: Package 'python-software-properties' has no installation candidate`
+    - replace `python-software-properties` by `software-properties-common` in file `~/torch/install-deps`
+
 2. If have issue with OpenSSL, do bellow steps:
     - Install it using `$sudo apt-get install libssl-dev` 
     - Run command `$./bootstrap; make; sudo make install` again
@@ -57,10 +60,12 @@ $ patch -p1 < ~/Desktop/atomic.patch
 ````
 4. Build
 ````
+$ cd ~/torch
 $ ./clean.sh
 $ export TORCH_NVCC_FLAGS="-D__CUDA_NO_HALF_OPERATORS__"
 $ ./install.sh
 ````
+- References: http://torch.ch/docs/getting-started.html
 
 5. Test
 
